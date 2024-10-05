@@ -733,11 +733,28 @@ of dropdown*/
   }
 
   .lawn-mowing-content p{
-    width: calc(100% - 30px);
+    width: calc(100% - 10px);
   }
   
 }
 
+@media only screen and (max-width: 380px) {
+
+  .lawn-mowing-content{
+    margin-left: -20px;
+  }
+
+  .lawn-mowing-content h1{
+    font-size: 1.7em;
+  }
+
+  .lawn-mowing-content p{
+    font-size: 0.8em;
+  }
+  .lawn-button-container a{
+    font-size: 1.0em;
+  }
+}
 
 
 
@@ -829,11 +846,32 @@ of dropdown*/
   }
 
   .hedge-trimming-content p{
-    
+    width: 280px;
   }
   
 }
+@media only screen and (max-width: 380px) {
+  #hedge-trimming-section {
+    height: 300px;
+  }
+  .hedge-trimming-content{
+    margin-right: -20px;
+  }
 
+
+  .hedge-trimming-content h1{
+    font-size: 1.7em;
+  }
+
+  .hedge-trimming-content p{
+    font-size: 0.7em;
+  }
+
+  .hedge-button-container a {
+  font-size: 1.0em;
+  }
+  
+}
 
 
 
@@ -926,7 +964,29 @@ of dropdown*/
   }
 
   .garden-maintenance-content p{
-    width: calc(100% - 30px);
+    width: calc(100% - 10px);
+  }
+  
+}
+
+@media only screen and (max-width: 380px) {
+  #garden-maintenance-section {
+    height: 300px;
+  }
+  .garden-maintenance-content{
+    margin-left: -20px;
+  }
+
+  .garden-maintenance-content h1{
+    font-size: 1.7em;
+  }
+
+  .garden-maintenance-content p{
+    font-size: 0.8em;
+  }
+
+  .garden-button-container a {
+    font-size: 1.0em;
   }
   
 }
