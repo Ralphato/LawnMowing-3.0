@@ -732,13 +732,17 @@ of dropdown*/
     margin-left: 0px;
   }
 
+  .lawn-mowing-content h1{
+    font-size: 1.8;
+  }
   .lawn-mowing-content p{
     width: calc(100% - 10px);
+    font-size: 0.9em;
   }
   
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 391px) {
 
   .lawn-mowing-content{
     margin-left: -20px;
@@ -844,13 +848,17 @@ of dropdown*/
   .hedge-trimming-content{
     margin-right: 0px;
   }
+  .hedge-trimming-content h1{
 
+    font-size: 1.8em;
+  }
   .hedge-trimming-content p{
     width: 280px;
+    font-size: 0.9em;
   }
   
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 391px) {
   #hedge-trimming-section {
     height: 300px;
   }
@@ -963,13 +971,17 @@ of dropdown*/
     margin-left: 0px;
   }
 
+  .garden-maintenance-content h1{
+    font-size: 1.8em;
+  }
   .garden-maintenance-content p{
     width: calc(100% - 10px);
+    font-size: 0.9em;
   }
   
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 391px) {
   #garden-maintenance-section {
     height: 300px;
   }
@@ -1487,8 +1499,8 @@ flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
 
-/* Quote Section */
-.quote-section {
+/*------------------------------------------ Quote Section -----------------------*/
+.quote-bonus-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1593,6 +1605,7 @@ max-width: 500px;
 /* Textarea */
 .contact-form textarea {
   height: 150px; /* Set a fixed height for the textarea */
+  font-family: 'roboto';
 }
 
 /* Button */
@@ -1610,6 +1623,57 @@ max-width: 500px;
 
 .contact-form button:hover {
   background-color: green; /* Slightly darker yellow on hover */
+}
+
+/* Responsive Styles for screens smaller than 580px */
+@media (max-width: 580px) {
+
+  .quote-bonus-section {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: flex-start; /* Align items to the left */
+    height: 120vh;
+  }
+
+  .quote-title{
+    margin-bottom:-80px;
+  }
+  .bonuses-section {
+    position: relative;
+    margin-left: 0; /* Remove margin to align properly */
+    width: 100%; /* Take full width */
+    max-width: 100%; /* Make sure bonuses section takes full width */
+  }
+
+  .scheduler {
+    position: relative;
+    margin-right: 0; /* Remove right margin */
+    margin-top: 20px; /* Add space between bonuses and quote section */
+    width: 100%; /* Take full width */
+    max-width: 100%; /* Make sure scheduler takes full width */
+  }
+}
+
+@media (max-width: 371px) {
+
+  .bonuses-section h2 {
+    font-size: 30px;
+
+  }
+  
+  .bonuses-section p {
+    font-size: 14px;
+
+  }
+  
+  .bonuses-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .bonuses-list li {
+    font-size: 14px;
+  }
+
 }
 
 
