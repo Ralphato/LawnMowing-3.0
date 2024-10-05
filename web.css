@@ -1676,6 +1676,29 @@ max-width: 500px;
 
 }
 
+@media (max-height: 830px) {
+
+  .bonuses-section h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .quote-bonus-section{
+    height: 140vh;
+  }
+  
+
+
+  
+
+    .quote-title{
+      margin-bottom: -40px;
+      padding-top: 30px;
+    }
+
+    
+
+}
 
 /*
 ----------------------------------------------------------------------------
