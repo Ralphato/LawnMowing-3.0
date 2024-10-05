@@ -523,16 +523,16 @@ of dropdown*/
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 580px) {
   /* Styles for mobile devices */
   .dropdown-text {
-    font-size: 1.2em; /* Reduce font size for better fit on smaller screens */
-    padding-left: 20px;
+    font-size: 1.4em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 40px;
   }
 
   .button-container {
 
-    padding-left: 20px; /* Adjust padding for smaller screens */
+    padding-left: 40px; /* Adjust padding for smaller screens */
     gap: 20px; /* Reduce space between buttons */
   }
 
@@ -542,6 +542,29 @@ of dropdown*/
     padding: 10px 20px; /* Reduce padding for smaller screens */
   }
 }
+
+@media (max-width: 520px) {
+  /* Styles for extra small mobile devices */
+  .dropdown-text {
+    font-size: 1.2em; /* Further reduce font size for tiny screens */
+    padding-left: 30px; /* Provide minimal padding to prevent text from being too close to the edge */
+    padding-right: 10px;
+  }
+
+  .button-container {
+    padding-left: 30px; /* Add minimal padding for smaller devices */
+    padding-right: 10px;
+    gap: 10px; /* Reduce space between buttons even more */
+  }
+
+  .button-container a {
+    font-size: 0.9em; /* Smaller font size for buttons */
+    padding: 5px 12px; /* Smaller padding for small buttons */
+  }
+
+  .arrow-down img.arrow-image {
+    width: 10%; /* Adjust si
+
 
 /*------------------------------SERVICES SECTIONS ------------------------------*/
 
