@@ -535,12 +535,15 @@ of dropdown*/
     font-size: 1.3em; /* Reduce font size for better fit on smaller screens */
     padding-left: 0px;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 180px;
+    justify-content: center;
+
   }
 
   .button-container {
-
-    padding-left: 100px; /* Adjust padding for smaller screens */
+    padding-left: 0px;
+    display: flex;
+  justify-content: center;
     gap: 20px; /* Reduce space between buttons */
   }
 
@@ -555,29 +558,42 @@ of dropdown*/
   }
 }
 
-@media (max-width: 480px) {
-  /* Styles for extra small mobile devices */
+@media (max-width: 470px) {
+  /* Styles for mobile devices */
+
+  .welcome-dropdown {
+    width: 100%; /* Full width */
+    height: 500px;
+  }
+
   .dropdown-text {
-    font-size: 1.4em; /* Further reduce font size for tiny screens */
-    padding-left: 30px; /* Provide minimal padding to prevent text from being too close to the edge */
-    padding-right: 10px;
+    font-size: 1.2em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 0px;
+    text-align: center;
+    padding-top: 180px;
+    justify-content: center;
+
   }
 
   .button-container {
-    padding-left: 30px; /* Add minimal padding for smaller devices */
-    padding-right: 10px;
-    gap: 10px; /* Reduce space between buttons even more */
+    padding-left: 0px;
+    display: flex;
+  justify-content: center;
+    gap: 20px; /* Reduce space between buttons */
   }
 
   .button-container a {
-    font-size: 0.9em; /* Smaller font size for buttons */
-    padding: 5px 12px; /* Smaller padding for small buttons */
+    font-size: 1.3m; /* Reduce button text size for smaller screens */
+    margin-top: -30px;
+    padding: 10px 20px; /* Reduce padding for smaller screens */
   }
-
   .arrow-down img.arrow-image {
-    width: 10%; 
+    width: 12%; /* Increase size slightly for better visibility on smaller screens */
+    height: 12%; /* Maintain aspect ratio */
   }
-  }
+}
+
+
 
   
 
