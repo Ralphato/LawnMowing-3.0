@@ -594,6 +594,42 @@ of dropdown*/
 }
 
 
+@media (max-width: 430px) {
+  /* Styles for mobile devices */
+
+  .welcome-dropdown {
+    width: 100%; /* Full width */
+    height: 500px;
+  }
+
+  .dropdown-text {
+    font-size: 1.0em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 0px;
+    text-align: center;
+    padding-top: 180px;
+    justify-content: center;
+
+  }
+
+  .button-container {
+    padding-left: 0px;
+    display: flex;
+  justify-content: center;
+    gap: 20px; /* Reduce space between buttons */
+  }
+
+  .button-container a {
+    font-size: 1.3m; /* Reduce button text size for smaller screens */
+    margin-top: -30px;
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+  .arrow-down img.arrow-image {
+    width: 12%; /* Increase size slightly for better visibility on smaller screens */
+    height: 12%; /* Maintain aspect ratio */
+  }
+}
+
+
 
   
 
@@ -876,8 +912,7 @@ of dropdown*/
 }
 
 .hero-content {
-  max-width: 600px; /* Limit width for readability */
-
+ 
   z-index: 2; /* Ensure content stays above any potential background elements */
 }
 
@@ -891,7 +926,8 @@ of dropdown*/
   font-size: 1.2em; /* Adjust font size */
   margin-bottom: 20px; /* Spacing */
   line-height: 1.6; /* Adjust line height for readability */
-  max-width: 700px;
+  max-width: 600px; /* Limit width for readability */
+
 }
 
 .hero-buttons {
@@ -938,8 +974,10 @@ flex-shrink: 0; /* Prevent the image from shrinking */
 @media (max-width: 580px) {
   /* Styles for mobile devices */
 .hero-section{
-    padding-left: 90px;
-    padding-bottom: 280px;
+  padding-right: 0px;
+    padding-left: 30px;
+    padding-bottom: 100px;
+    
 }
   .hero-content h1 {
     font-size: 1.5em; /* Adjust font size */
@@ -948,18 +986,18 @@ flex-shrink: 0; /* Prevent the image from shrinking */
   }
   
   .hero-content p {
-    font-size: 1.0em; /* Adjust font size */
+    font-size: 1.3em; /* Adjust font size */
     margin-bottom: 20px; /* Spacing */
     line-height: 1.6; /* Adjust line height for readability */
-    max-width: 700px;
+    width: calc(100% - 30px); /* Width will be 100% of the container's width minus 20px */
+  
   }
   .hero-image {
-    position: absolute;
-   /* Prevent the image from shrinking */
-   left:100px;
-   bottom: 20px;
-  
-   
+
+   position: relative; /* Use relative position instead of absolute for better alignment */
+   width: 100%; /* Adjust width for responsiveness */
+   bottom: -50px;
+   left:30px;
   }
     
     .hero-image img {
@@ -968,12 +1006,24 @@ flex-shrink: 0; /* Prevent the image from shrinking */
       height: 100% ; /* Maintain aspect ratio */
       border-radius: 8px; /* Optional: Rounded corners */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for the image */
-      z-index: 100000000 !important;
+
     }
 }
 
 
-@media (max-width: 470px) {
+@media (max-width: 480px) {
+  /* Styles for smaller mobile devices */
+
+
+
+
+.hero-content p {
+ font-size: 1.1em;
+
+}
+}
+
+@media (max-width: 430px) {
   /* Styles for smaller mobile devices */
 
   
