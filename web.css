@@ -52,7 +52,8 @@ header {
   font-family: 'Open Sans';
   font-weight: 600;
   padding: 10px 25px;
-  padding-top: 60px;
+  margin-top: 50px !important;
+  
   border-radius: 50px;
   transition: 0.2s;
   margin: 0 5px;
@@ -116,11 +117,19 @@ header {
   padding: 15px 20px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 
   font-size: 1.2em;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+
+  transition: background 0.4s ease; /* Smooth transition */
 }
+
+.schedule-header:hover{
+  background: linear-gradient(135deg, #5c8e34, #76a148);
+}
+
 
 
 
@@ -153,7 +162,7 @@ header {
   .hamburger .line {
       width: 30px;
       height: 3px;
-      background: black;
+      background: white;
       margin: 6px 0;
   }
 
@@ -191,7 +200,7 @@ header {
 
   .nav-bar.active{ /*when activated*/
     height: 700px;
-    background-color: white;
+    background-color: rgb(79, 141, 57);
     top:130px;
   }
 
@@ -209,6 +218,8 @@ header {
   .nav-bar ul li a{
     margin-bottom: 12px;
   }
+
+
 }
 
 
@@ -306,45 +317,6 @@ of dropdown*/
 
   /* Media Queries for Responsiveness */
 
-@media only screen and (max-width: 1150px){
-  .service-item p{
-    font-size: 0.7em;
-  }
-
-  .service-item h3{
-    margin-bottom:1px;
-  }
-}
-
-/* For tablets and smaller screens */
-@media only screen and (max-width: 900px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr); /* Changes to 2 columns */
-  }
-  .service-item p{
-    font-size: 0.7em;
-  }
-
-  .service-item h3{
-    margin-bottom:1px;
-  }
-
-}
-
-/* For mobile devices */
-@media only screen and (max-width: 600px) {
-  .services-container {
-    grid-template-columns: 1fr; /* Changes to 1 column */
-    gap: 30px; /* Increase gap for better spacing on smaller screens */
-  }
-  .service-item p{
-    font-size: 0.9em;
-  }
-
-  .service-item h3{
-    margin-bottom: 5px;
-  }
-}
 
 
 
@@ -352,7 +324,7 @@ of dropdown*/
 
 
 
-
+/*-------------------------------------DROP DOWN CONTENT SECTION---------------------------------------*/
 
 /*Header below navigation*/
 .welcome-dropdown {
@@ -463,7 +435,113 @@ of dropdown*/
 }
 
 
+/*--------------------------------Responsive Adjustments for Smaller Screens--------------------------------*/
 
+/* Media Query for Smaller Screens */
+@media only screen and (max-width: 1300px) {
+ 
+
+  .dropdown-text {
+    font-size: 2.3em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 150px;
+  }
+
+  .button-container {
+
+    padding-left: 150px; /* Adjust padding for smaller screens */
+    gap: 20px; /* Reduce space between buttons */
+  }
+
+  .button-container a {
+    font-size: 1.5em; /* Reduce button text size for smaller screens */
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+
+  .arrow-down img.arrow-image {
+    width: 6%; /* Increase size slightly for better visibility on smaller screens */
+    height: 6%; /* Maintain aspect ratio */
+  }
+}
+
+
+@media (max-width: 1124px) {
+  /* CSS for tablets */
+  .dropdown-text {
+    font-size: 2.0em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 120px;
+  }
+
+  .button-container {
+
+    padding-left: 120px; /* Adjust padding for smaller screens */
+    gap: 20px; /* Reduce space between buttons */
+  }
+
+  .button-container a {
+    font-size: 1.5em; /* Reduce button text size for smaller screens */
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 900px) {
+  /* CSS for mobile landscape */
+  .dropdown-text {
+    font-size: 1.7em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 90px;
+  }
+
+  .button-container {
+
+    padding-left: 90px; /* Adjust padding for smaller screens */
+    gap: 20px; /* Reduce space between buttons */
+  }
+
+  .button-container a {
+    font-size: 1.5em; /* Reduce button text size for smaller screens */
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 700px) {
+  /* Styles for intermediate  */
+  .dropdown-text {
+    font-size: 1.5em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 60px;
+  }
+
+  .button-container {
+
+    padding-left: 60px; /* Adjust padding for smaller screens */
+    gap: 20px; /* Reduce space between buttons */
+  }
+
+  .button-container a {
+    font-size: 1.1em; /* Reduce button text size for smaller screens */
+    margin-top: -30px;
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+}
+
+
+@media (max-width: 500px) {
+  /* Styles for mobile devices */
+  .dropdown-text {
+    font-size: 1.2em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 20px;
+  }
+
+  .button-container {
+
+    padding-left: 20px; /* Adjust padding for smaller screens */
+    gap: 20px; /* Reduce space between buttons */
+  }
+
+  .button-container a {
+    font-size: 1.1em; /* Reduce button text size for smaller screens */
+    margin-top: -30px;
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+}
 
 /*------------------------------SERVICES SECTIONS ------------------------------*/
 
