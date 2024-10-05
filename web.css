@@ -543,10 +543,10 @@ of dropdown*/
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 580px) {
   /* Styles for extra small mobile devices */
   .dropdown-text {
-    font-size: 1.2em; /* Further reduce font size for tiny screens */
+    font-size: 0.2em; /* Further reduce font size for tiny screens */
     padding-left: 30px; /* Provide minimal padding to prevent text from being too close to the edge */
     padding-right: 10px;
   }
@@ -565,8 +565,9 @@ of dropdown*/
   .arrow-down img.arrow-image {
     width: 10%; 
   }
-}
+  }
 
+  
 
 /*------------------------------SERVICES SECTIONS ------------------------------*/
 
@@ -1513,4 +1514,3 @@ position: relative; /* For positioning children */
   color: black;
   margin: 0 auto; /* Centers the paragraph element within its container */
 }
-
