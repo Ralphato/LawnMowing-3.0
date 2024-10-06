@@ -1628,6 +1628,7 @@ max-width: 500px;
 /* Responsive Styles for screens smaller than 580px */
 @media (max-width: 580px) {
 
+  
   .quote-bonus-section {
     flex-direction: column; /* Stack sections vertically */
     align-items: flex-start; /* Align items to the left */
@@ -1636,6 +1637,7 @@ max-width: 500px;
 
   .quote-title{
     margin-bottom:-80px;
+    margin-top: -50px;
   }
   .bonuses-section {
     position: relative;
@@ -1653,7 +1655,7 @@ max-width: 500px;
   }
 }
 
-@media (max-width: 371px) {
+@media (max-width: 420px) {
 
   .bonuses-section h2 {
     font-size: 30px;
@@ -1661,7 +1663,7 @@ max-width: 500px;
   }
   
   .bonuses-section p {
-    font-size: 14px;
+    font-size: 18px;
 
   }
   
@@ -1674,9 +1676,13 @@ max-width: 500px;
     font-size: 14px;
   }
 
+  .quote-title{
+    margin-top: -50px;
+  }
+
 }
 
-@media (max-height: 830px) {
+@media (max-height: 850px) and (max-width: 420px) {
 
   .bonuses-section h2 {
     margin-top: 30px;
@@ -1685,6 +1691,9 @@ max-width: 500px;
 
   .quote-bonus-section{
     height: 140vh;
+  }
+
+  .quote-title{
   }
   
 
@@ -1695,8 +1704,27 @@ max-width: 500px;
       margin-bottom: -40px;
       padding-top: 30px;
     }
+}
 
-    
+@media (max-height: 730px) and (max-width: 410px) { /*for iphone SE*/
+  .bonuses-section h2 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+
+  .quote-bonus-section{
+    height: 155vh;
+  }
+  
+
+
+  
+
+    .quote-title{
+      margin-bottom: 10px;
+      padding-top: 0px;
+    }
+
 
 }
 
@@ -1711,8 +1739,6 @@ max-width: 500px;
 }
 
 
-
-
 .blog-header {
   font-size: 2.4em; /* Adjust font size as needed */
   font-weight: bold; /* Make the header bold */
@@ -1721,8 +1747,6 @@ max-width: 500px;
   left: 160px;
   padding-top: 20px;
   color: white;
- 
-  
 }
 
 .fancy-green {
@@ -1772,9 +1796,9 @@ max-width: 500px;
 }
 
 .blog-item {
-background: #a3d4a3; /*#1a961a;*/
-width: 390px; /* Adjust width as needed */
-height: 530px;
+background: #d8efdf; /*#1a961a;*/
+width: 380px; /* Adjust width as needed */
+height: 520px;
 padding: 0px; /* Add padding inside each service item */
 border-radius: 20px;
 font-family: roboto;
@@ -1794,7 +1818,6 @@ position: relative; /* For positioning children */
   bottom: 0; /*0 because we want it to cover the parent*/
   padding: 20px; /* Keep padding to match .service-item */
   border-radius: 0px; /* Matches the parent border-radius */
-  
 }
 
 
@@ -1804,22 +1827,114 @@ position: relative; /* For positioning children */
 }
 
 .blog-item img {
-  width: 390px;
-  height: 300px;
-  margin-bottom: 20px;
+  width: 380px;
+  height: 290px;
+  margin-bottom: 10px;
 }
 
 .blog-item h3 {
-  color: black;
-  font-size: 1.5em;
-  margin-bottom: 40px;
+  color: #2E8B57;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left:20px ;
+  font-weight: 500;
 }
 
 
 .blog-item p {
-  font-size: 1.2em;
-  text-align: center; /* Centers the text inside the paragraph */
+  font-size: 1.0em;
   max-width: 320px;
   color: black;
-  margin: 0 auto; /* Centers the paragraph element within its container */
+  margin-left:20px ;
+  text-align: left;
+}
+
+.read-more {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #2E8B57; /* Green color for the Read More link */
+  margin-top: auto; /* Ensures it stays at the bottom */
+  align-self: flex-start; /* Align to the left */
+  transition: color 0.3s ease;
+}
+
+
+
+@media (max-width: 450px) {
+
+  .blog-header { 
+    margin-top: 0px; /* Remove default margin */
+    position: absolute;
+    left: 40px; /* Adjust dynamically relative to the viewport width */
+    padding-top: 0px;
+    font-size: 1.5em;
+    padding-left: 0px;
+  }
+
+
+  .view-more{
+    padding-right: 50px;
+    padding-top: 5px;
+    font-size: 1.1em;
+  }
+  .frame-image {
+    width: 27px; /* Adjust size as needed */
+
+    padding-top: 3px;
+    margin-right: 30px;
+    right: 0;
+    transition: filter 0.3s ease; /* Smooth transition for the effect */
+  }
+  
+  
+
+  .blogs-container {
+    display: flex;
+    flex-direction: column; /* Stack the blog items vertically */
+    justify-content: center; /* Center them if necessary */
+    align-items: center; /* Center them horizontally */
+    padding: 20px; /* Adjust padding to fit smaller screens */
+    height: auto; /* Let the container adjust its height based on content */
+  }
+  .blogs-container{
+    margin-top: 100px;
+  }
+  .blog-item {
+    width: 340px;
+    height: 300px !important; /* Let height adjust based on content */
+    margin-bottom: 20px; /* Add space between blog items */
+  }
+
+  .blog-item img {
+    width: 100%; /* Make images take full width */
+    height: 165px; /* Maintain aspect ratio */
+  }
+
+  .blog-item h3{
+    font-size: 1.0em;
+
+  }
+  .blog-item p{
+    font-size: 0.7em;
+  }
+
+  .read-more{
+    font-size: 0.9em;
+  }
+}
+
+
+@media only screen and (max-width: 390px) {
+  .blog-header {
+  font-size: 1.3em;  
+  }
+
+  .view-more{
+    padding-right: 42px;
+    font-size: 0.9em;
+  }
+  .frame-image {
+    width: 20px; /* Adjust size as needed */
+  }
 }
