@@ -24,10 +24,10 @@ header {
 }
 
 .logo img {
-  width: 140%; /* Ensures the image doesn't overflow its container */
-  height: 140%; /* Keeps the image height within the container */
-  margin-left: -140px;
-  margin-top: 25px;
+  width: 100%; /* Ensures the image doesn't overflow its container */
+  height: 100%; /* Keeps the image height within the container */
+  margin-left: -110px;
+  margin-top: 20px;
  
   /* Maintains the aspect ratio */
 
@@ -128,6 +128,16 @@ header {
 
 .schedule-header:hover{
   background: linear-gradient(135deg, #5c8e34, #76a148);
+}
+
+.header-logos{
+  position:absolute;
+  right: 0;
+  margin-right: 280px;
+  margin-top: -50px;
+  width: 20%;
+  height: 8%;
+
 }
 
 
@@ -630,6 +640,88 @@ of dropdown*/
 }
 
 
+@media (max-width: 350px) {
+  /* Styles for mobile devices */
+
+
+
+  .dropdown-text {
+    font-size: 0.9em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 0px;
+    text-align: center;
+    padding-top: 180px;
+    justify-content: center;
+
+  }
+
+  
+
+  .button-container a {
+    font-size: 1.2m; /* Reduce button text size for smaller screens */
+    margin-top: -30px;
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+  .arrow-down img.arrow-image {
+    width: 12%; /* Increase size slightly for better visibility on smaller screens */
+    height: 12%; /* Maintain aspect ratio */
+  }
+}
+
+
+@media (max-width: 320px) {
+  /* Styles for mobile devices */
+
+
+
+  .dropdown-text {
+    font-size: 0.8em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 0px;
+    text-align: center;
+    padding-top: 180px;
+    justify-content: center;
+
+  }
+
+  
+
+  .button-container a {
+    font-size: 1.1m; /* Reduce button text size for smaller screens */
+    margin-top: -30px;
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+  .arrow-down img.arrow-image {
+    width: 12%; /* Increase size slightly for better visibility on smaller screens */
+    height: 12%; /* Maintain aspect ratio */
+  }
+}
+
+
+@media (max-width: 300px) {
+  /* Styles for mobile devices */
+
+
+
+  .dropdown-text {
+    font-size: 0.7em; /* Reduce font size for better fit on smaller screens */
+    padding-left: 0px;
+    text-align: center;
+    padding-top: 180px;
+    justify-content: center;
+
+  }
+
+  
+
+  .button-container a {
+    font-size: 0.9em; /* Reduce button text size for smaller screens */
+    margin-top: -30px;
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+  .arrow-down img.arrow-image {
+    width: 12%; /* Increase size slightly for better visibility on smaller screens */
+    height: 12%; /* Maintain aspect ratio */
+  }
+}
 
   
 
@@ -1007,139 +1099,247 @@ of dropdown*/
 
 
 /*------------------------------------HERO SECTION*******************************/
+.hero-wrapper{
+  background: #f9f9f9;
+  position: relative;
+}
+
 
 .hero-section {
-  display: flex;
-  width: 100%;
-  height: auto; /* Adjust the height based on the content */
-  background: #f9f9f9; /* Background color */
-  text-align: left;
-  color: rgb(64, 82, 55); /* Text color */
-  padding: 80px; /* Add padding for spacing */
-  padding-left: 300px;
-  position: relative;
-  overflow: hidden;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* Font family */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  align-items: center; /* Align content vertically */
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-left: 150px;
+  gap: 10px; /* Gap between grid items */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  color: #405237;
+
+  
+  
 }
 
 .hero-content {
- 
-  z-index: 2; /* Ensure content stays above any potential background elements */
+  max-width: 600px;
+  margin-left: 00px;
+  
 }
 
 .hero-content h1 {
-  font-size: 2em; /* Adjust font size */
-  margin-bottom: 20px; /* Spacing */
-  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 .hero-content p {
-  font-size: 1.2em; /* Adjust font size */
-  margin-bottom: 20px; /* Spacing */
-  line-height: 1.6; /* Adjust line height for readability */
-  max-width: 600px; /* Limit width for readability */
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
 
 }
 
 .hero-buttons {
   display: flex;
   gap: 20px; /* Space between buttons */
-  justify-content: left;
-  margin-top: 20px; /* Add margin for spacing */
 }
 
 .hero-button {
-  background-color: #4caf50; /* Button background color */
-  color: white; /* Button text color */
-  padding: 15px 30px; /* Padding for buttons */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Bold text */
-  transition: background-color 0.3s, transform 0.3s; /* Hover effects */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .hero-button:hover {
-  background-color: #388e3c; /* Hover effect color */
-  transform: translateY(-5px); /* Lift effect on hover */
+  background-color: #388e3c;
+  transform: translateY(-5px);
 }
 
-
-.hero-image {
-position: absolute;
-bottom: 140px;
-right: 0px;
-left: 1000px;
-flex-shrink: 0; /* Prevent the image from shrinking */
-}
 
 .hero-image img {
-  width: 80%;
+  width: 65%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 90px;
 
-  height: 100%; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for the image */
 }
 
-
-@media (max-width: 580px) {
-  /* Styles for mobile devices */
-.hero-section{
-  padding-right: 0px;
-    padding-left: 30px;
-    padding-bottom: 100px;
-    
+@media(max-width: 1300px){
+  .hero-section{
+    margin-left: 100px;
+  }
 }
+
+@media (max-width: 1100px) {
+  .hero-section {
+    margin-left: 85px; /* Reduce margin further */
+  }
+  
   .hero-content h1 {
-    font-size: 1.5em; /* Adjust font size */
-    margin-bottom: 20px; /* Spacing */
-    font-weight: bold;
+    font-size: 2em; /* Further reduce header size */
   }
-  
+
   .hero-content p {
-    font-size: 1.3em; /* Adjust font size */
-    margin-bottom: 20px; /* Spacing */
-    line-height: 1.6; /* Adjust line height for readability */
-    width: calc(100% - 30px); /* Width will be 100% of the container's width minus 20px */
+    font-size: 1em; /* Further reduce paragraph size */
+  }
+
+  .hero-button {
+    font-size: 1em; /* Further reduce button text size */
+    padding: 10px 20px; /* Adjust button padding */
+  }
+
+  .hero-image img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1000px) {
+
+
+  .hero-image img {
+    width: 75%;
+    margin-left: 60px;
+  }
+}
+
+/* For screens smaller than 900px */
+@media (max-width: 900px) {
+  .hero-section {
+    margin-left: 70px; /* Minimal margin */
+  }
   
+  .hero-content h1 {
+    font-size: 1.8em; /* Smaller header */
   }
-  .hero-image {
 
-   position: relative; /* Use relative position instead of absolute for better alignment */
-   width: 100%; /* Adjust width for responsiveness */
-   bottom: -50px;
-   left:30px;
+  .hero-content p {
+    font-size: 0.95em; /* Smaller paragraph text */
   }
-    
-    .hero-image img {
-      width: 80%;
-    
-      height: 100% ; /* Maintain aspect ratio */
-      border-radius: 8px; /* Optional: Rounded corners */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for the image */
 
-    }
+  .hero-button {
+    font-size: 0.9em; /* Smaller button text */
+    padding: 8px 15px; /* Further adjust padding */
+  }
+
+  .hero-image img {
+    width: 80%;
+    margin-left: 50px;
+  }
 }
 
 
-@media (max-width: 480px) {
+/* Responsive: Switch to Flexbox on smaller screens */
+@media (max-width: 800px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    margin-left: 0px;
+    padding: 50px;
+  }
+
+  .hero-content, .hero-image {
+    max-width: 100%;
+    margin-bottom: 30px; /* Add space between content and image */
+
+  }
+
+  .hero-content h1 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .hero-content p {
+    font-size: 1.1em;
+  }
+
+  .hero-image img {
+
+    width: 70%; /* Ensure the image is responsive */
+  }
+
+  .hero-image img {
+    display: block; /* Ensures the image is treated as a block-level element */
+    margin: 0 auto; /* Horizontally center the image */
+  }
+}
+
+/* For screens smaller than 700px */
+@media (max-width: 700px) {
+  .hero-section {
+    margin-left: 10px; /* Almost no margin */
+  }
+
+  .hero-content h1 {
+    font-size: 1.6em; /* Further reduce header */
+  }
+
+  .hero-content p {
+    font-size: 0.9em; /* Small paragraph text */
+  }
+
+  .hero-button {
+    font-size: 0.85em; /* Smaller button text */
+    padding: 6px 10px; /* Adjust padding */
+  }
+}
+
+/* For screens smaller than 500px (mobile screens) */
+@media (max-width: 500px) {
+  .hero-section {
+    margin-left: 0px; /* No margin */
+  }
+
+  .hero-content h1 {
+    font-size: 1.4em; /* Smallest header size */
+  }
+
+  .hero-content p {
+    font-size: 0.85em; /* Smallest paragraph size */
+  }
+
+  .hero-button {
+    font-size: 0.8em; /* Smallest button text size */
+    padding: 5px 8px; /* Minimal padding */
+  }
+
+  .hero-image{
+
+  }
+}
+
+@media (max-width: 520px) {
   /* Styles for smaller mobile devices */
 
 
 
+  .hero-content h1 {
+    font-size: 1.1em; /* Smallest header size */
+  }
 
+  .hero-content p {
+    font-size: 0.8em;
+   
+   }
+
+}
+
+
+
+@media (max-width: 380px) {
+  /* Styles for smaller mobile devices */
+  .hero-content h1 {
+    font-size: 1.0em; /* Smallest header size */
+  }
 .hero-content p {
- font-size: 1.1em;
-
-}
-}
-
-@media (max-width: 430px) {
-  /* Styles for smaller mobile devices */
-
+  font-size: 0.7em;
+ 
+ }
   
 }
-
 
 
 
@@ -1500,30 +1700,36 @@ flex-shrink: 0; /* Prevent the image from shrinking */
 
 
 /*------------------------------------------ Quote Section -----------------------*/
+
+
+
 .quote-bonus-section {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Align sections horizontally */
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  height: 80vh; /* Full viewport height */
+  padding: 40px;
   background-color: whitesmoke;
-  padding: 20px; /* Add padding */
   margin-top: 150px;
+  height: 80vh; /* Let content define height */
 }
 
-.scheduler{
-  position: absolute;
-  margin-right: 200px;
-  right: 0;
+.scheduler {
+  flex-basis: 45%; /* Allow this section to take 45% of the width */
+  margin-right: 90px; /* Small gap between sections */
+  padding-left: 30px; /*to keep a gap*/
 }
 
-.bonuses-section{
-position:absolute;
-left:0;
-margin-left: 200px;
-text-align: left;
-max-width: 500px;
+/* Bonuses Section */
+.bonuses-section {
+  flex-basis: 45%; /* Allow this section to take the remaining 45% */
+  text-align: left;
+  max-width: 500px; /* Cap the maximum width */
+  margin-left: 160px;
+
 }
+
+
 
 .bonuses-section h2 {
   font-size: 34px;
@@ -1565,7 +1771,8 @@ max-width: 500px;
   color: black; /* White text color */
   font-weight: bold;
   font-family: 'roboto';
-  margin-bottom: -50px; /* Space below the title */
+
+  margin-bottom: -40px;
 }
 
 /* Contact Section */
@@ -1575,9 +1782,6 @@ max-width: 500px;
   align-items: center;
   height: 70vh; /* Full viewport height */
   padding-top: 50px;
-
-  
-  
 }
 
 /* Contact Form */
@@ -1595,6 +1799,7 @@ max-width: 500px;
 .contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
+
   padding: 15px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
@@ -1625,108 +1830,122 @@ max-width: 500px;
   background-color: green; /* Slightly darker yellow on hover */
 }
 
-/* Responsive Styles for screens smaller than 580px */
-@media (max-width: 580px) {
+@media(max-width: 1250px){
+  .scheduler{
+    margin-right: 30px; /* Lower the padding */
+  }
+  .bonuses-section{
+    margin-left: 30px;
+  }
+}
 
-  
+@media(max-width: 1150px){
+  .scheduler{
+    margin-right: 0px; /* Lower the padding */
+  }
+  .bonuses-section{
+    margin-left: 0px;
+  }
+}
+
+
+@media (max-width: 1000px) {
   .quote-bonus-section {
-    flex-direction: column; /* Stack sections vertically */
-    align-items: flex-start; /* Align items to the left */
-    height: 120vh;
+    flex-direction: column; /* Stack sections vertically on smaller screens */
+    padding: 20px;
+    height: auto;
+  }
+
+  .scheduler, .bonuses-section {
+    flex-basis: 100%;
+    margin-right: 0;
+    max-width: 100%; /* Take full width */
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  .scheduler{
+    padding-left: 0px;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+    align-items: center; /* Center content horizontally */
+    padding-bottom: 40px;
+  }
+
+
+
+  
+  .bonuses-section{
+    margin-left: 80px;
   }
 
   .quote-title{
-    margin-bottom:-80px;
-    margin-top: -50px;
-  }
-  .bonuses-section {
-    position: relative;
-    margin-left: 0; /* Remove margin to align properly */
-    width: 100%; /* Take full width */
-    max-width: 100%; /* Make sure bonuses section takes full width */
+    margin-top: 20px;
+    margin-bottom: -20px;
+
   }
 
+}
+
+@media (max-width: 800px) {
+  .bonuses-section{
+    margin-left: 40px;
+  }
+
+
+}
+
+@media (max-width: 500px) {
+  .bonuses-section{
+    margin-left: 0px;
+  }
+
+}
+
+@media (max-width: 380px) {
+  /* Make the scheduler smaller */
   .scheduler {
-    position: relative;
-    margin-right: 0; /* Remove right margin */
-    margin-top: 20px; /* Add space between bonuses and quote section */
-    width: 100%; /* Take full width */
-    max-width: 100%; /* Make sure scheduler takes full width */
+    padding: 0px; /* Add smaller padding */
+    margin-left: 0; /* Remove left margin */
   }
-}
 
-@media (max-width: 420px) {
 
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"]{
+    font-size: 15px;
+    /* reduce padding and try other stuff*/
+    height: 10px;
+
+  }
+
+  .contact-form textarea {
+  height:100px;
+  
+  }
+
+  /* Decrease the quote title size */
+  .quote-title {
+    font-size: 20px; /* Reduce the font size */
+
+    margin-bottom: -40px;
+  }
+
+  /* Decrease bonus section font size */
   .bonuses-section h2 {
-    font-size: 30px;
+    font-size: 30px; /* Slightly smaller title */
+  }
 
-  }
-  
-  .bonuses-section p {
-    font-size: 18px;
-
-  }
-  
-  .bonuses-list {
-    list-style: none;
-    padding: 0;
-  }
-  
+  .bonuses-section p, 
   .bonuses-list li {
-    font-size: 14px;
+    font-size: 14px; /* Reduce the paragraph and list font size */
   }
 
-  .quote-title{
-    margin-top: -50px;
-  }
-
+  
 }
 
-@media (max-height: 850px) and (max-width: 420px) {
 
-  .bonuses-section h2 {
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-
-  .quote-bonus-section{
-    height: 140vh;
-  }
-
-  .quote-title{
-  }
-  
-
-
-  
-
-    .quote-title{
-      margin-bottom: -40px;
-      padding-top: 30px;
-    }
-}
-
-@media (max-height: 730px) and (max-width: 410px) { /*for iphone SE*/
-  .bonuses-section h2 {
-    margin-top: 50px;
-    margin-bottom: 10px;
-  }
-
-  .quote-bonus-section{
-    height: 155vh;
-  }
-  
-
-
-  
-
-    .quote-title{
-      margin-bottom: 10px;
-      padding-top: 0px;
-    }
-
-
-}
 
 /*
 ----------------------------------------------------------------------------
@@ -1754,7 +1973,7 @@ max-width: 500px;
   }
   .fancy-service {
     color: #62ff00; /* Use your desired fancy green color */
-    }
+   }
 
 
 
@@ -1764,7 +1983,7 @@ max-width: 500px;
   color: white; /* Adjust color as needed */
   margin-right: 10px; /* Add space between the text and the image */
   position: absolute;
-  padding-top: 20px;
+  padding-top: 30px;
   right: 0;
   padding-right: 220px;
 }
@@ -1776,7 +1995,7 @@ max-width: 500px;
   height: auto; /* Maintain aspect ratio */
 
   position: absolute;
-  padding-top: 15px;
+  padding-top: 25px;
   margin-right: 180px;
   right: 0;
   transition: filter 0.3s ease; /* Smooth transition for the effect */
@@ -1787,13 +2006,19 @@ max-width: 500px;
   filter: invert(60%) sepia(100%) saturate(400%) hue-rotate(60deg) brightness(100%) contrast(95%); /* Approximates the #78de3c color */
 }
 
+
+
 .blogs-container {
-  display: flex; /* Use flexbox for flexible layout */
-  justify-content: space-around; /* Space out items */
-  align-items: flex-start; /* Align items to the start */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 70px;
+  justify-content: center; /* Aligns grid items horizontally */
+  justify-items: center;   /* Ensures each grid item is centered within its cell */
   padding: 125px; /* Padding around the container */
-  height: 700px;
+
 }
+
+
 
 .blog-item {
 background: #d8efdf; /*#1a961a;*/
@@ -1859,82 +2084,161 @@ position: relative; /* For positioning children */
   transition: color 0.3s ease;
 }
 
-
-
-@media (max-width: 450px) {
-
-  .blog-header { 
-    margin-top: 0px; /* Remove default margin */
-    position: absolute;
-    left: 40px; /* Adjust dynamically relative to the viewport width */
-    padding-top: 0px;
-    font-size: 1.5em;
-    padding-left: 0px;
+@media (max-width: 1450px) {
+  .blog-item{
+    width: 330px; /* Adjust width as needed */
+    height: 460px;
   }
 
+}
 
-  .view-more{
-    padding-right: 50px;
-    padding-top: 5px;
-    font-size: 1.1em;
+@media (max-width: 1250px) {
+  .blog-item{
+    width: 300px; /* Adjust width as needed */
+    height: 430px;
   }
-  .frame-image {
-    width: 27px; /* Adjust size as needed */
 
-    padding-top: 3px;
-    margin-right: 30px;
-    right: 0;
-    transition: filter 0.3s ease; /* Smooth transition for the effect */
-  }
-  
-  
+}
 
-  .blogs-container {
-    display: flex;
-    flex-direction: column; /* Stack the blog items vertically */
-    justify-content: center; /* Center them if necessary */
-    align-items: center; /* Center them horizontally */
-    padding: 20px; /* Adjust padding to fit smaller screens */
-    height: auto; /* Let the container adjust its height based on content */
+@media (max-width: 1179px) {
+  .blog-item{
+    width: 380px; /* Adjust width as needed */
+    height: 520px;
   }
+
   .blogs-container{
-    margin-top: 100px;
-  }
-  .blog-item {
-    width: 340px;
-    height: 300px !important; /* Let height adjust based on content */
-    margin-bottom: 20px; /* Add space between blog items */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid */
   }
 
-  .blog-item img {
-    width: 100%; /* Make images take full width */
-    height: 165px; /* Maintain aspect ratio */
-  }
-
-  .blog-item h3{
-    font-size: 1.0em;
-
-  }
-  .blog-item p{
-    font-size: 0.7em;
-  }
-
-  .read-more{
-    font-size: 0.9em;
-  }
 }
 
 
-@media only screen and (max-width: 390px) {
-  .blog-header {
-  font-size: 1.3em;  
+
+@media (max-width: 1060px) {
+  .blogs-container {
+      display: flex;             /* Switch to flexbox for better alignment */
+      flex-direction: column;    /* Stack blog items vertically */
+      align-items: center;       /* Center blog items horizontally */
+      justify-content: center;   /* Center blog items vertically */
+      padding: 0px;
+      padding-top: 125px;
+  }
+
+  .blog-item {
+    width: 440px; /* Adjust width as needed */
+    height: 590px;
+  }
+
+  .blog-item img{
+    width: 440px;
+  }
+
+}
+
+@media(max-width: 900px){
+  .blog-header{
+    display: flex;           /* Enable flexbox layout */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    position: static; /* get rid of absolute positioning */
   }
 
   .view-more{
-    padding-right: 42px;
-    font-size: 0.9em;
+  position: absolute;
+
+
+  z-index: 10000;
+  left: 50%; /* Center it horizontally */
+
+  transform: translateX(-50%); /* Ensure perfect horizontal centering */
   }
-  .frame-image {
-    width: 20px; /* Adjust size as needed */
+}
+
+@media(max-width: 600px){
+  .blog-item {
+    width: 340px; /* Adjust width as needed */
+    height: 490px;
+  }
+
+}
+
+@media (max-width: 410px) {
+  .blog-item {
+    width: 310px; /* Adjust width */
+    height: 460px; /* Adjust height */
+  }
+
+  .blog-item img {
+    width: 100%; /* Ensure the image adjusts to the new width */
+    height: 220px; /* Adjust image height */
+  }
+
+  .blog-item h3 {
+    font-size: 1.2em; /* Slightly reduce heading size */
+    margin-left: 10px; /* Adjust margins */
+  }
+
+  .blog-item p {
+    font-size: 0.95em; /* Slightly reduce text size */
+    margin-left: 10px; /* Adjust margins */
+  }
+
+  .read-more {
+    font-size: 1em; /* Reduce read-more font size */
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .blog-item {
+    width: 290px; /* Adjust width */
+    height: 430px; /* Adjust height */
+  }
+
+  .blog-item img {
+    width: 100%; /* Ensure the image adjusts to the new width */
+    height: 200px; /* Adjust image height */
+  }
+
+  .blog-item h3 {
+    font-size: 1.1em; /* Reduce heading size further */
+    margin-left: 5px; /* Adjust margins */
+  }
+
+  .blog-item p {
+    font-size: 0.9em; /* Reduce text size */
+    margin-left: 5px;
+  }
+
+  .read-more {
+    font-size: 0.9em; /* Reduce read-more size */
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 310px) {
+  .blog-item {
+    width: 260px; /* Adjust width */
+    height: 400px; /* Adjust height */
+  }
+
+  .blog-item img {
+    width: 100%; /* Ensure the image adjusts to the new width */
+    height: 180px; /* Adjust image height */
+  }
+
+  .blog-item h3 {
+    font-size: 1em; /* Further reduce heading size */
+
+  }
+
+  .blog-item p {
+    font-size: 0.85em; /* Further reduce text size */
+ 
+  }
+
+  .read-more {
+    font-size: 0.85em; /* Reduce read-more size */
+
   }
 }
