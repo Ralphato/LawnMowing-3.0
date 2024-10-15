@@ -11,6 +11,10 @@ body {
   background: #fefefe;
 }
 
+html, body{
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 header {
   width: 100%;
   height: 130px;
@@ -19,8 +23,6 @@ header {
   align-items: center;
   justify-content: space-between; /*this is why makes the header placed to the right */
   padding: 0 100px;
-
-
 }
 
 .logo img {
@@ -1912,10 +1914,11 @@ of dropdown*/
 /* Footer section styling */
 .footer-section {
   flex: 1; /* Evenly distribute space */
-  min-width: 200px; /* Minimum width for each section */
+  min-width: 0px; /* Minimum width for each section */
   margin: 20px; /* Spacing between sections */
-  text-align: center; /* Center align text for a cleaner look */
-  padding: 0px; /* Remove padding to center content */
+  text-align: left; /* Center align text for a cleaner look */
+  margin-left: 7vw; /* Remove padding to center content */
+
 }
 
 /* Footer section headers */
@@ -1971,15 +1974,32 @@ of dropdown*/
 
 
 /* Responsive footer sections for smaller screens */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column; /* Stack sections vertically */
-    align-items: center; /* Center-align sections */
-  }
+@media (max-width: 960px) {
+  
 
   .footer-section {
-    margin: 10px 0; /* Reduce margin for smaller screens */
-    text-align: center; /* Center-align text */
+    min-width: 10px;
+  }
+}
+
+@media(max-width:370px){
+  
+  .footer-section{
+    margin-left: 3vw;
+  }
+  .footer-section h4 {
+
+    font-size: 0.6em; /* Increase header font size */
+
+
+
+  }
+  
+  /* Footer section paragraphs */
+  .footer-section p {
+    font-size: 0.5em; /* Increase paragraph font size */
+    white-space: nowrap; /* Prevent text wrapping */
+
   }
 }
 
