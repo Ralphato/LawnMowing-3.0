@@ -1847,10 +1847,10 @@ of dropdown*/
   }
 
   #happy-customers{
-    background-size: 100% 100%; /* Stretches the image to fit both width and height */
-    background-repeat: no-repeat; /* Prevents repeating */
+    background-position-x: 10%;
  
   }
+
 }
 
 @media (max-width: 450px){
@@ -1891,22 +1891,22 @@ of dropdown*/
 
 /* Footer styling */
 .footer {
- 
   background-color: #006400; /* Green background */
   color: white; /* White text color */
   text-align: center; /* Center-align text */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Use the Roboto font */
   position: relative; /* Ensures footer stays at the bottom */
+  padding: 20px 0; /* Add some padding to create space around the content */
 }
 
 /* Footer container styling */
 .footer-container {
   display: flex; /* Flexbox layout for columns */
+  justify-content: center; /* Center-align sections */
   max-width: 1200px; /* Max width for the container */
   margin: 0 auto; /* Center the container */
   flex-wrap: wrap; /* Wrap items on smaller screens */
-  padding: 0px 20px; /* Horizontal padding */
-  
+  padding: 0px; /* No padding */
 }
 
 /* Footer section styling */
@@ -1914,13 +1914,13 @@ of dropdown*/
   flex: 1; /* Evenly distribute space */
   min-width: 200px; /* Minimum width for each section */
   margin: 20px; /* Spacing between sections */
-  text-align: left; /* Left align text for a cleaner look */
-  padding-left: 80px;
+  text-align: center; /* Center align text for a cleaner look */
+  padding: 0px; /* Remove padding to center content */
 }
 
 /* Footer section headers */
 .footer-section h4 {
-  margin-top: -10px ;
+  margin-top: -10px;
   font-size: 1.0em; /* Increase header font size */
   margin-bottom: 15px; /* Space below the header */
   font-weight: 700; /* Bold font */
@@ -1932,28 +1932,22 @@ of dropdown*/
   font-size: 0.9em; /* Increase paragraph font size */
   line-height: 1.8; /* Line height for readability */
   margin: 0; /* No margin */
-
   color: #a3d4a3; /* Muted green color */
 }
 
-.rights{
+.rights {
   color: #a3d4a3;
   text-align: center; /* Center text content */
   font-size: 0.9em;
-  padding-left: 40%;
-  margin-top:10px ;
+  margin-top: 10px;
   margin-bottom: 10px;
-
 }
 
 /* Social icons container */
 .social-icons {
   display: flex; /* Flexbox layout for icons */
   justify-content: center; /* Center-align icons */
-  padding-top: 70px;
-  margin-top: -20px; /* Space above icons */
-  padding-right: 60px;
-
+  margin-top: 20px; /* Space above icons */
 }
 
 /* Social icons links */
@@ -1964,31 +1958,17 @@ of dropdown*/
 }
 
 /* Social icons images */
-.facebook img {
+.facebook img, .tiktok img, .instagram img, .linkedin img {
   width: 50px; /* Size of the icons */
   height: 50px; /* Maintain aspect ratio */
-}
-
-.tiktok img{
-  width: 50px;
-  height: 50px;
-}
-
-.instagram img{
-  width: 50px;
-  height: 50px;
-}
-
-.linkedin img{
-  width: 50px;
-  height: 50px;
 }
 
 /* Hover effect for social icons */
 .social-icons a:hover img {
   transform: scale(1.1); /* Slight zoom on hover */
   filter: brightness(1.2); /* Increase brightness */
-  }
+}
+
 
 /* Responsive footer sections for smaller screens */
 @media (max-width: 768px) {
