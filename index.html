@@ -5,6 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Navigation Bar using HTML, CSS & JavaScript</title>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "i2JahWgYPMJgOlK9h",
+          });
+      })();
+    </script>
+    <script src="emailScript.js"></script>
+    <script src="modalScript.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -77,7 +91,7 @@
         </span>
       </div>  
       <div class="button-container">
-        <a href="get-quote.html" class="quote-button">Get a Quote</a>
+        <a class="quote-button">Get a Quote</a>
         <a href="contact.html" class="contact-button">Contact Us</a>
       </div>
     </div>
@@ -159,9 +173,9 @@
     </section>
 
    
-  
 
-       
+
+
     <section class="quote-bonus-section">
 
             <!-- Bonuses Section -->
@@ -184,11 +198,11 @@
         <p class="quote-title">GET A <span class="fancy-green">QUOTE</span></p>
         <div class="contact-section">
           <form class="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="text" placeholder="Subject" required>
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">SCHEDULE A SERVICE</button>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <textarea id="message" placeholder="Message" required></textarea>
+            <button type="submit" id="submit1" onclick="checkParam()">SCHEDULE A SERVICE</button>
           </form>
         </div>
       </div>
@@ -244,7 +258,13 @@
           </div>
         </div>
 
-         
+                 <!-- Additional View More button for smaller screens -->
+          <div class="view-more-container-mobile">
+            <span class="view-more">View More</span>
+            <a href="allBlogs.html" class="view-more-link">
+                <img src="frame.png" alt="Frame" class="frame-image">
+            </a>
+        </div>
         </div>
 
 
@@ -314,8 +334,8 @@
   
           <!-- "View More" Button -->
           <div class="arrow-container">
-            <div class="arrow new-left-arrow" id="leftArrow">⟨</div>
-            <div class="arrow new-right-arrow" id="rightArrow">⟩</div> 
+            <div class="arrow new-left-arrow" id="leftArrow2">⟨</div>
+            <div class="arrow new-right-arrow" id="rightArrow2">⟩</div> 
           </div>
             <div class="view-more-container"></div>
             <a href="#" class="view-more-button">View More</a>
@@ -338,6 +358,7 @@
     </div>
     <div class="footer-container">
         <!-- Call Us Section -->
+      
         <div class="footer-section">
             <h4>Call us:</h4>
             <p>1-800-000-0000</p>
@@ -361,7 +382,94 @@
     <p class="rights"> © 2024 by WeMow. All rights reserved. </p>
     
 </footer>
+
+
+
+<!--LOADING SECTION-->
+
+<div id="loading-screen" style="display: none;">
+  <div class="loading-content">
+    <div class="spinner"></div>
+    <p>Sending email, please wait...</p>
+  </div>
+</div>
   
+<div id="popup" class="popup" style="display: none;">
+  <p id="popup-message"></p>
+</div>
+
+
+<!-- Modal for "Get a Quote" -->
+<div id="quoteModal" class="modal">
+  
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="padder">
+      <div class="logo-container">
+        <img src="logo8-new.png" class="modal-logo" alt="Company Logo">
+      </div>
+    </div>
+
+        <!-- Step Progress Bar -->
+      <!-- Step Progress Bar -->
+      <div class="progress-container">
+        <div class="step active" id="step-1">1</div>
+        <div class="bar active"></div>
+        <div class="step" id="step-2">2</div>
+      </div>
+  
+       <!-- Step 1 Form Content -->
+       <div id="step-content-1" class="step-content">
+        <h2 class="modal-title">Our Services</h2>
+        <p class="modal-text">Please select which service you are interested in.</p>
+        <div class="service-selection">
+          <div class="service-box lawnus" onclick="currentService('LawnMowing')">
+            <div class="service-content">
+              <img src="lawn-quote.png" alt="Lawn Mowing" class="service-icon">
+              <p class="service-title">Lawn Mowing</p>
+          </div>
+          </div>
+          <div class="service-box" onclick="currentService('HedgeTrimming')">
+            <div class="service-content">
+              <img src="garden-quote.png" alt="Web Design" class="service-icon">
+              <p>Garden Maintenance</p>
+            </div>
+          </div>
+          <div class="service-box" onclick="currentService('GardenMaintenance')">
+            <div class="service-content">
+              <img src="hedge-quote.png" alt="Marketing" class="service-icon">
+              <p>Hedge Trimming</p>
+            </div> 
+          </div>
+          <div class="service-box" onclick="currentService('Other')">
+            <div class="service-content">
+              <img src="other-icon.png" alt="Other" class="service-icon">
+              <p>Other</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+         <!-- Step 2 Form Content -->
+    <div id="step-content-2" class="step-content" style="display:none;">
+      <h2 class="modal-title">Contact Information</h2>
+      <form class="modal-quote-form">
+        <input type="text" id="name2" placeholder="Name" required>
+        <input type="email" id="email2" placeholder="Email" required>
+        <input type="text" id="subject2" placeholder="Subject" required>
+        <textarea id="message2" class="textarea2" placeholder="Message" required></textarea>
+        <button type="submit" id="submit2" onclick="checkParam2()">Get Quote</button>
+    </form>
+    </div>
+
+    <!-- Next Button -->
+    <button id="nextStepButton" class="next-btn">Next Step</button>
+  </div>
+</div>
+
+
+
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
@@ -627,6 +735,17 @@
     });
 
     document.getElementById('rightArrow').addEventListener('click', function () {
+        currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+        moveRight(currentIndex);
+    });
+
+
+    document.getElementById('leftArrow2').addEventListener('click', function () {
+        currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+        moveLeft(currentIndex);
+    });
+
+    document.getElementById('rightArrow2').addEventListener('click', function () {
         currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
         moveRight(currentIndex);
     });
