@@ -26,55 +26,39 @@
 </head>
 <body>
     <header>
-        <div class="logo"> <img src="logo8.png"></div>
-        <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
+    <div class="logo">
+        <img src="logo8.png" alt="Logo">
+    </div>
 
-        <!-- nav is the navigation bar-->
-        <nav class="nav-bar">
-          <!-- ul defines a list abd li is an item inside the list--> 
-          <ul>
-            <li>
-              <a href="#" class="home">Home</a>
-            </li>
-            
-           
-
-            <!--DROP DOWN-->
-            <div class = "dropdown">
-              <li>
-                <a class = "dropbtn">Services▾</a>
-              </li>
-              <div class = "dropdown-content">
-                <a href="lawnMowing.html">Lawn Mowing</a>
-                <a href="landscaping.html">Landscaping</a>
-                <a href="">Watering</a>
-              </div>
+    <div class="filler">
+      
+  </div>
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="#" class="home">Home</a></li>
+            <div class="dropdown">
+                <li><a class="dropbtn">Services<span class="downArrow">▾</span></a></li>
+                <div class="dropdown-content">
+                    <a href="lawnMowing.html">Lawn Mowing</a>
+                    <a href="landscaping.html">Landscaping</a>
+                    <a href="#">Watering</a>
+                </div>
             </div>
+            <li><a href="#" class="pricing">Pricing</a></li>
+            <li><a href="#" class="about">About</a></li>
+           <!--<li><a href="#" class="blogs">Blogs</a></li> --> 
+            <li><a href="#" class="contact">Contact</a></li>
+        </ul>
+    </nav>
+    <button class="schedule-header">SCHEDULE SERVICE</button>
+    <img class="header-logos" src="header-logos.png" alt="Header Logos">
+</header>
 
-
-
-            <li>
-              <a href="" class="pricing">Pricing</a>
-            </li>
-            <li>
-              <a href="" class = "about">About</a>
-            </li>
-            <li>
-              <a href="" class="blogs">Blogs</a>
-            </li>
-            <li>
-              <a href="" class = "contact">Contact</a>
-            </li>
-          </ul>
-   
-        </nav>
-        <button class="schedule-header">SCHEDULE SERVICE</button>
-        <img class="header-logos" src="header-logos.png">
-    </header>
 
 
   <!--Section below navigation bar-->
@@ -431,7 +415,7 @@
           </div>
           <div class="service-box" onclick="currentService('HedgeTrimming')">
             <div class="service-content">
-              <img src="garden-quote.png" alt="Web Design" class="service-icon">
+              <img src="garden-quote.png" alt="Web Design" class="service-icon garden-icon">
               <p>Garden Maintenance</p>
             </div>
           </div>
