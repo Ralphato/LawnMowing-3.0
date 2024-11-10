@@ -303,6 +303,16 @@ header {
   .downArrow{
     display: none;
   }
+
+  .header-logos.active {
+    display: block;
+    position: absolute;
+    top: 630px;
+    z-index: 100000000000000;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+}
 }
 
 @media only screen and (max-width: 580px){
@@ -317,6 +327,11 @@ header {
     font-size: 15px;
     margin-bottom: -30px;
   }
+  .header-logos.active {
+
+    top: 470px;
+    width:50%;
+  }
   }
 
   @media only screen and (max-width: 350px){
@@ -329,6 +344,11 @@ header {
   
     .nav-bar ul li a{
       font-size: 13px;
+    }
+
+    .header-logos.active {
+      width: 70%;
+      top: 450px;
 
     }
     }
@@ -2038,6 +2058,10 @@ of dropdown*/
 
 
 }
+.footerfiller{
+  margin-top: 0px;
+}
+
 
 /* Footer section headers */
 .footer-section h4 {
@@ -2049,9 +2073,7 @@ of dropdown*/
   display: flex; /* Flexbox for vertical centering */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
-  margin-right:0px;
-
-  
+  margin-right:0px;  
 }
 
 /* Footer section paragraphs */
@@ -2079,6 +2101,11 @@ of dropdown*/
   display: flex; /* Flexbox layout for icons */
   justify-content: center; /* Center-align icons */
   margin-top: 20px; /* Space above icons */
+  position:absolute;
+  top: 10%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to truly center */
+  margin-top: 0; /* Remove previous margin */
 }
 
 /* Social icons links */
@@ -2104,28 +2131,61 @@ of dropdown*/
 /* Responsive footer sections for smaller screens */
 @media (max-width: 960px) {
   
-
   .footer-section {
     min-width: 10px;
   }
 }
 
-@media(max-width:600px){
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: left; /* Center-align sections vertically */
+  }
   
+  .footer-section {
+    margin: 10px 0; /* Adjust spacing between sections */
+    margin-left: 40px;
+    text-align: left; /* Center-align text in each section */
+  }
 
+  .footerfiller{
+    margin-top: 50px;
+  }
+
+  .footer-section p {
+      font-size: 1.1em; /* Increase paragraph font size */
+      line-height: 1.8; /* Line height for readability */
+      justify-content: left; /* Center content horizontally */
+      align-items: left; /* Center content vertically */
+      margin-bottom: 10px;
+  }
+
+  .footer-section h4 {
+    margin-top: -10px;
+    font-size: 1.2em; /* Increase header font size */
+    margin-bottom: 5px; /* Space below the header */
+    font-weight: 700; /* Bold font */
+    text-transform: uppercase; /* Uppercase headers */
+    display: flex; /* Flexbox for vertical centering */
+    justify-content: left; /* Center content horizontally */
+    align-items: left; /* Center content vertically */
+    margin-right:0px;  
+  }
 }
   
 
-@media(max-width:520px){
+
+
+@media(max-width:470px){
 
   .footer-section h4 {
 
-    font-size: 0.8em; /* Increase header font size */
+    font-size: 1.0em; /* Increase header font size */
   }
   
   /* Footer section paragraphs */
   .footer-section p {
-    font-size: 0.6em; /* Increase paragraph font size */
+    font-size: 1.1em; /* Increase paragraph font size */
     white-space: nowrap; /* Prevent text wrapping */
   }
 
@@ -2133,6 +2193,10 @@ of dropdown*/
     width: 40px; /* Size of the icons */
     height: 40px; /* Maintain aspect ratio */
   }
+
+  .footer-section {
+    margin-left: 20px;
+   }
 }
 
 
@@ -2141,12 +2205,12 @@ of dropdown*/
 
   .footer-section h4 {
 
-    font-size: 0.7em; /* Increase header font size */
+    font-size: 0.9em; /* Increase header font size */
   }
   
   /* Footer section paragraphs */
   .footer-section p {
-    font-size: 0.5em; /* Increase paragraph font size */
+    font-size: 0.8em; /* Increase paragraph font size */
     white-space: nowrap; /* Prevent text wrapping */
     
   }
@@ -2155,6 +2219,8 @@ of dropdown*/
     width: 45px; /* Size of the icons */
     height: 45px; /* Maintain aspect ratio */
   }
+
+  
 }
 
 @media(max-width:280px){
@@ -2806,13 +2872,13 @@ position: relative; /* For positioning children */
 
 @media (max-width: 410px) {
   .blog-item {
-    width: 310px; /* Adjust width */
-    height: 460px; /* Adjust height */
+    width: 290px; /* Adjust width */
+    height: 430px; /* Adjust height */
   }
 
   .blog-item img {
     width: 100%; /* Ensure the image adjusts to the new width */
-    height: 220px; /* Adjust image height */
+    height: 200px; /* Adjust image height */
   }
 
   .blog-item h3 {
@@ -2833,23 +2899,23 @@ position: relative; /* For positioning children */
 
 @media (max-width: 360px) {
   .blog-item {
-    width: 290px; /* Adjust width */
-    height: 430px; /* Adjust height */
+    width: 260px; /* Adjust width */
+    height: 400px; /* Adjust height */
   }
 
   .blog-item img {
     width: 100%; /* Ensure the image adjusts to the new width */
-    height: 200px; /* Adjust image height */
+    height: 180px; /* Adjust image height */
   }
 
   .blog-item h3 {
-    font-size: 1.1em; /* Reduce heading size further */
-    margin-left: 5px; /* Adjust margins */
+    font-size: 1.0em; /* Reduce heading size further */
+    margin-left: 15px; /* Adjust margins */
   }
 
   .blog-item p {
-    font-size: 0.9em; /* Reduce text size */
-    margin-left: 5px;
+    font-size: 0.8em; /* Reduce text size */
+    margin-left: 15px;
   }
 
   .read-more {
@@ -3048,6 +3114,11 @@ position: relative; /* For positioning children */
 
 
 /* Modal form */
+@media  only screen and (max-width: 1200px) {
+  .modal-quote-form{
+    padding: 30px;
+  }
+}
 .modal-quote-form input,
 .modal-quote-form textarea {
   width: 95%;
@@ -3312,10 +3383,15 @@ resize: none;
     font-size: 10px;
 
   }
+  .modal-text{
+
+    font-size: 15px;
+    padding: 10px;
+  }
 
 }
 
-@media (max-width: 350px) {
+@media (max-width: 375px) {
   /* Adjust size of logos inside boxes */
   .service-icon {
     width: 30px;
@@ -3334,6 +3410,8 @@ resize: none;
    
     height: 80px;
     }
+
+   
 
 }
 
