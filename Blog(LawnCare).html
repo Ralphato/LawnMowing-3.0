@@ -1,1 +1,474 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeMow - Lawn Care Insights Blog</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0eddc;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: #416c29;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .logo img {
+            height: 190px;
+            width: auto;
+        }
+
+         /* Navigation */
+         .nav-bar ul {
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-bar ul li a {
+            display: block;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .nav-bar ul li a:hover {
+            opacity: 75%;
+        }
+
+        .nav-bar ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-bar ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger .line {
+                width: 30px;
+                height: 3px;
+                background: black;
+                margin: 6px 0;
+            }
+
+            .nav-bar {
+                height: 0;
+                position: absolute;
+                top: 130px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                transition: 0.5s;
+                overflow: hidden;
+                background-color: white;
+            }
+
+            .nav-bar.active {
+                height: 300px;
+                transition: height 0.5s ease-in-out;
+            }
+
+            .nav-bar ul {
+                display: block;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .nav-bar.active ul {
+                opacity: 1;
+            }
+        }
+
+        /* Main section */
+        .main-section {
+            max-width: 1100px;
+            margin: 120px auto 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .main-section h1, .main-section h2 {
+            transition: color 0.3s ease;
+        }
+
+        .main-section h1:hover, .main-section h2:hover {
+            color: #145227;
+        }
+
+        .main-section h1 {
+            font-size: 30px;
+            color: #416c29;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .main-section h2 {
+            font-size: 22px;
+            color: #416c29;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .main-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        /* Service image */
+        .service-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            background-color: #416c29;
+            color: white;
+        }
+        .about {
+            background-color: #f0eddc;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .buy-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #416c29;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #0a3d17; /* Darker green on hover */
+        }
+        .gallery-section {
+            padding: 40px;
+            background-color: #f0eddc;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 25px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+         /* Chat Button */
+         .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background-color: #416c29;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: 0.3s ease;
+        }
+        .chat-button:hover {
+            background-color: #0a3d17;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 101;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 50%;
+            text-align: left;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Scrollbar Styling for Webkit Browsers (Chrome, Safari, Edge) */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Background color of the scrollbar track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #416c29; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #0c491c; /* Color when hovering over the scrollbar */
+        }
+
+        /* For Firefox */
+        * {
+            scrollbar-width: thick;
+            scrollbar-color: #416c29 #f1f1f1;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Video/WElgrb.png" alt="WeMow Logo">
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section: Blog Post -->
+    <section class="main-section">
+        <p>
+            <a href="#home" style="color: #3c8c44;">Home</a>
+            <a> / </a>
+            <a href="#blog" style="color: #3c8c44;">Blog</a>
+            <a> / </a>
+            <span>Lawn Care Tips</span>
+        </p>
+
+        <h1>The Essentials of Lawn Care for Business Property Owners</h1>
+
+        <div class="service-image">
+            <img src="Video/Grasscut2.jpg" alt="Lawn Mower Image">
+        </div>
+
+        <p>Maintaining a professional-looking lawn is essential for any business property owner. A well-kept lawn not only enhances your property’s aesthetic but also creates a welcoming environment for customers and clients. In this blog post, we’ll walk you through key lawn care services that can keep your outdoor spaces in top shape.</p>
+
+        <h2>Grass-Cutting Services: Consistency is Key</h2>
+        <p>Regular mowing is the backbone of proper lawn care. Whether you’re looking for a one-time lawn makeover or regular upkeep, scheduling grass-cutting services ensures that your property looks neat year-round. Mowing not only keeps your grass at the right height but also helps improve its health by encouraging strong root growth.</p>
+
+        <h2>Fertilization: Feed Your Lawn the Right Nutrients</h2>
+        <p>Fertilization is one of the most important steps to ensuring your lawn thrives, especially in commercial settings where the appearance of your property plays a significant role in your business's overall image. Over time, soil can lose essential nutrients due to erosion, watering, or natural wear and tear, which can lead to patchy, discolored grass and weak growth. A proper fertilization routine provides the nutrients your lawn needs to stay lush, green, and healthy, even through seasonal changes. The most common nutrients required for lawn health include nitrogen, phosphorus, and potassium—each playing a critical role in the grass's growth and resilience. Our team of lawn care experts assesses the unique condition of your lawn, soil composition, and grass type to apply the right mix of nutrients at the appropriate time. Additionally, seasonal fertilization is key. For instance, during the spring, your lawn may require a boost of nitrogen to promote green growth, while in the fall, it may benefit from a potassium-rich fertilizer to strengthen the grass for winter. Regular feeding throughout the year also helps the grass recover from stress factors such as drought, heat, or foot traffic, keeping it healthy and beautiful.</p>
+
+        <h2>Weed Control: Protecting Your Lawn from Unwanted Plants</h2>
+        <p>Weeds can be a persistent issue, especially in well-maintained lawns where they have an ideal environment to thrive. Not only do weeds detract from your lawn’s appearance, but they also compete with your grass for essential resources such as sunlight, water, and nutrients. Over time, this competition can weaken your lawn, allowing more weeds to take over, and eventually ruining the overall look of your property. Effective weed control goes beyond just pulling out visible weeds—it’s about preventing them before they even have the chance to grow. This is where pre-emergent herbicides come into play. Applied early in the season, these herbicides target weed seeds before they germinate, drastically reducing weed growth throughout the year. For weeds that have already emerged, post-emergent treatments are used to eliminate them without harming the healthy grass. However, weed control is not a one-time solution. Regular maintenance, proper mowing practices, and soil health management are all crucial in keeping weeds at bay. A professional lawn care team can continuously monitor your property, applying treatments and adjusting strategies as needed to ensure that your lawn stays weed-free and flourishing.</p>
+        
+        <h2>Creating a Maintenance Plan for Your Lawn</h2>
+        <p>Every lawn is unique, and maintaining it requires a personalized approach. Business property owners should consider their lawn’s specific needs, including factors like soil type, local climate, the amount of sunlight, and the type of grass planted. Developing a comprehensive lawn care plan tailored to your property is key to ensuring that it remains healthy and attractive throughout the year. At WeMow, we work closely with business property owners to design custom lawn care plans that fit their schedule, budget, and specific lawn conditions. Our plans typically include scheduled mowing, seasonal fertilization, weed control, pest management, and irrigation services. With a personalized plan in place, you can rest assured that your lawn is receiving the right care at the right time, allowing you to focus on running your business while we take care of your outdoor space. In conclusion, a well-maintained lawn is more than just an aesthetic asset—it reflects the professionalism and attention to detail that your business stands for. By investing in regular grass-cutting, fertilization, weed control, and tailored maintenance plans, you ensure that your property remains a welcoming and polished environment for your customers and clients. At WeMow, we are dedicated to providing top-notch lawn care services to help your business make the best possible impression. Contact us today to learn more about how we can help your lawn thrive!</p>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Our Work Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Video/Grasscut.jpg" alt="Lawn Before and After">
+            </div>
+            <div class="gallery-item">
+                <img src="Video/Grasscut5.jpg" alt="Beautifully Maintained Lawn">
+            </div>
+            <div class="gallery-item">
+                <img src="Video/Grasscut3.jpg" alt="Professional Lawn Care Equipment">
+            </div>
+            <div class="gallery-item">
+                <img src="Video/Grasscut4.jpg" alt="Expert Grass Cutting">
+            </div>
+        </div>
+    </section>
+
+     <!-- About Section -->
+     <div class="about">
+        <h2>About Us</h2>
+        <p>WeMow is a trusted lawn care provider with a focus on delivering tailored services for business property owners. We believe in the importance of proper lawn maintenance to create an inviting outdoor space.</p>
+
+        <a href="Service(LawnCare).html" class="buy-button">Check Our Service!</a>
+    </div>
+
+
+    <footer>
+        &copy; 2024 WeMow. All Rights Reserved.
+    </footer>
+
+    <!-- Chat Button -->
+    <button id="chatBtn" class="chat-button">Sign Up!</button>
+
+    <!-- Modal (Overlay) -->
+    <div id="chatModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>How to Buy Our Service</h2>
+        <p>Follow these simple steps to get started:</p>
+        <ol>
+          <li>Visit our <a href="#pricing">pricing page</a> to select the right service package for you.</li>
+          <li>Fill out the service request form and include any special instructions.</li>
+          <li>Submit your request and our team will contact you within 24 hours to finalize the details!</li>
+        </ol>
+        <p>If you have any questions, feel free to <a href="mailto:info@wemow.com">contact us</a> or call us at 1-800-WEMOW.</p>
+      </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navBar = document.querySelector(".nav-bar");
+
+        hamburger.addEventListener("click", () => {
+            navBar.classList.toggle("active");
+        });
+
+        // Get the modal
+        var modal = document.getElementById("chatModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("chatBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+ 
